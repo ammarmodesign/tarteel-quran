@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./layouts/Footer";
 import Navbar from "./layouts/Navbar";
@@ -14,7 +15,6 @@ function App() {
   return (
     <>
       <Navbar />
-
       <Routes>
         <Route index element={<Home />} />
         <Route path="/shiekhs" element={<Shiekhs />} />
@@ -25,8 +25,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-
       <Footer />
+
+      <SpeedInsights />
     </>
   );
 }
