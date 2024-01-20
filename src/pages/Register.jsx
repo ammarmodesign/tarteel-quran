@@ -56,7 +56,6 @@ const Register = () => {
             <div className="relative">
               <input
                 {...register("username")}
-                dir="ltr"
                 type={"text"}
                 id={"username"}
                 className="px-4 py-2 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
