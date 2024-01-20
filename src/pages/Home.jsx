@@ -5,8 +5,11 @@ import FeatCard from "../components/ui/FeatCard";
 import Hero from "../components/Hero";
 import { IoMdBook, IoMdHeartEmpty } from "react-icons/io";
 import { PiMedal } from "react-icons/pi";
+import useDeviceType from "../hooks/useDeviceType";
 
 const Home = () => {
+  let platform = useDeviceType();
+
   return (
     <>
       <Hero />
@@ -43,18 +46,20 @@ const Home = () => {
             <button className="btn-primary">معرفة المزيد</button>
           </div>
           {/* Mobile Only */}
-          <div className="images">
-            <img
-              src="/images/quran-about-1.png"
-              className="w-24 aspect-auto -z-20 absolute rotate-12 top-8 opacity-40 md:opacity-100 md:z-0 md:rotate-0 md:w-40 md:relative"
-              alt=""
-            />
-            <img
-              src="/images/quran-about-2.png"
-              className="w-24 aspect-auto -z-20 absolute -rotate-12 bottom-24 left-8 opacity-10 md:opacity-100 md:z-0 md:rotate-0 md:w-40 md:relative"
-              alt=""
-            />
-          </div>
+          {platform.mobile && (
+            <div className="images">
+              <img
+                src="/images/quran-about-1.png"
+                className="w-24 aspect-auto -z-20 absolute rotate-12 top-8 opacity-40 md:opacity-100 md:z-0 md:rotate-0 md:w-40 md:relative"
+                alt=""
+              />
+              <img
+                src="/images/quran-about-2.png"
+                className="w-24 aspect-auto -z-20 absolute -rotate-12 bottom-24 left-8 opacity-10 md:opacity-100 md:z-0 md:rotate-0 md:w-40 md:relative"
+                alt=""
+              />
+            </div>
+          )}
         </div>
       </section>
       <section className="banner bg-greeny-gradient section-margin text-white">
@@ -71,25 +76,27 @@ const Home = () => {
               <p>أرني المزيد من القراء</p>
             </button>
           </div>
-          <ImageSwiper />
-          <div className="images hidden lg:block h-[400px]">
-            <img
-              className="z-40 rounded-lg absolute w-52 left-0 transition-all duration-300 hover:left-16"
-              src="/images/slider/mosaad-slide.jpg"
-            />
-            <img
-              className="z-30 rounded-lg absolute w-52 left-16 transition-all duration-300 hover:left-32"
-              src="/images/slider/sudais-slide.jpg"
-            />
-            <img
-              className="z-20 rounded-lg absolute w-52 left-32 transition-all duration-300 hover:left-48"
-              src="/images/slider/islam-slide.jpg"
-            />
-            <img
-              className="z-10 rounded-lg absolute w-52 left-48 transition-all duration-300 hover:left-72"
-              src="/images/slider/shriem-slide.jpg"
-            />
-          </div>
+          {platform.mobile && <ImageSwiper />}
+          {!platform.mobile && (
+            <div className="images hidden lg:block h-[400px]">
+              <img
+                className="z-40 rounded-lg absolute w-52 left-0 transition-all duration-300 hover:left-16"
+                src="/images/slider/mosaad-slide.jpg"
+              />
+              <img
+                className="z-30 rounded-lg absolute w-52 left-16 transition-all duration-300 hover:left-32"
+                src="/images/slider/sudais-slide.jpg"
+              />
+              <img
+                className="z-20 rounded-lg absolute w-52 left-32 transition-all duration-300 hover:left-48"
+                src="/images/slider/islam-slide.jpg"
+              />
+              <img
+                className="z-10 rounded-lg absolute w-52 left-48 transition-all duration-300 hover:left-72"
+                src="/images/slider/shriem-slide.jpg"
+              />
+            </div>
+          )}
         </div>
       </section>
       <section className="blogs section-margin text-white">

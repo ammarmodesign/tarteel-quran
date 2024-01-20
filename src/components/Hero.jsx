@@ -1,4 +1,7 @@
+import useDeviceType from "../hooks/useDeviceType";
+
 const Hero = () => {
+  let platform = useDeviceType();
   return (
     <section className="bg-[#212121]">
       <div className="relative wrapper py-16 flex items-center justify-between">
@@ -27,7 +30,6 @@ const Hero = () => {
               strokeLinejoin="round"
             />
           </svg>
-
           <svg
             id="mark-icon"
             className="animate-wiggle absolute hidden md:block md:top-32 md:right-20 lg:top-16 lg:right-20 z-10"
@@ -81,116 +83,118 @@ const Hero = () => {
             </defs>
           </svg>
         </div>
-
-        <div className="hidden relative md:block max-w-[400px]">
-          <svg
-            className="absolute top-4 right-16"
-            width="50"
-            height="50"
-            viewBox="0 0 200 200"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {" "}
-            <g clipPath="url(#clip0_116_153)">
+        {!platform.mobile && (
+          <div className="hidden relative md:block max-w-[400px]">
+            <svg
+              className="absolute top-4 right-16"
+              width="50"
+              height="50"
+              viewBox="0 0 200 200"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               {" "}
-              <path
-                d="M100 0C103.395 53.7596 146.24 96.6052 200 100C146.24 103.395 103.395 146.24 100 200C96.6052 146.24 53.7596 103.395 0 100C53.7596 96.6052 96.6052 53.7596 100 0Z"
-                fill="url(#paint0_linear_116_153)"
-              />{" "}
-            </g>{" "}
-            <defs>
+              <g clipPath="url(#clip0_116_153)">
+                {" "}
+                <path
+                  d="M100 0C103.395 53.7596 146.24 96.6052 200 100C146.24 103.395 103.395 146.24 100 200C96.6052 146.24 53.7596 103.395 0 100C53.7596 96.6052 96.6052 53.7596 100 0Z"
+                  fill="url(#paint0_linear_116_153)"
+                />{" "}
+              </g>{" "}
+              <defs>
+                {" "}
+                <linearGradient
+                  id="paint0_linear_116_153"
+                  x1="100"
+                  y1="0"
+                  x2="100"
+                  y2="200"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  {" "}
+                  <stop stopColor="#2BAE66" />{" "}
+                  <stop offset="1" stopColor="#007635" />{" "}
+                </linearGradient>{" "}
+                <clipPath id="clip0_116_153">
+                  {" "}
+                  <rect width="200" height="200" fill="white" />{" "}
+                </clipPath>{" "}
+              </defs>{" "}
+            </svg>
+            <svg
+              className="absolute bottom-4 left-16"
+              width="50"
+              height="50"
+              viewBox="0 0 200 200"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               {" "}
-              <linearGradient
-                id="paint0_linear_116_153"
-                x1="100"
-                y1="0"
-                x2="100"
-                y2="200"
-                gradientUnits="userSpaceOnUse"
-              >
+              <g clipPath="url(#clip0_116_153)">
                 {" "}
-                <stop stopColor="#2BAE66" />{" "}
-                <stop offset="1" stopColor="#007635" />{" "}
-              </linearGradient>{" "}
-              <clipPath id="clip0_116_153">
+                <path
+                  d="M100 0C103.395 53.7596 146.24 96.6052 200 100C146.24 103.395 103.395 146.24 100 200C96.6052 146.24 53.7596 103.395 0 100C53.7596 96.6052 96.6052 53.7596 100 0Z"
+                  fill="url(#paint0_linear_116_153)"
+                />{" "}
+              </g>{" "}
+              <defs>
                 {" "}
-                <rect width="200" height="200" fill="white" />{" "}
-              </clipPath>{" "}
-            </defs>{" "}
-          </svg>
-          <svg
-            className="absolute bottom-4 left-16"
-            width="50"
-            height="50"
-            viewBox="0 0 200 200"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {" "}
-            <g clipPath="url(#clip0_116_153)">
-              {" "}
-              <path
-                d="M100 0C103.395 53.7596 146.24 96.6052 200 100C146.24 103.395 103.395 146.24 100 200C96.6052 146.24 53.7596 103.395 0 100C53.7596 96.6052 96.6052 53.7596 100 0Z"
-                fill="url(#paint0_linear_116_153)"
-              />{" "}
-            </g>{" "}
-            <defs>
-              {" "}
-              <linearGradient
-                id="paint0_linear_116_153"
-                x1="100"
-                y1="0"
-                x2="100"
-                y2="200"
-                gradientUnits="userSpaceOnUse"
-              >
-                {" "}
-                <stop stopColor="#2BAE66" />{" "}
-                <stop offset="1" stopColor="#007635" />{" "}
-              </linearGradient>{" "}
-              <clipPath id="clip0_116_153">
-                {" "}
-                <rect width="200" height="200" fill="white" />{" "}
-              </clipPath>{" "}
-            </defs>{" "}
-          </svg>
-          <img
-            src="/images/green-quran-hero.png"
-            className="w-full h-full object-contain z-10"
-            alt=""
-          />
-          {/* <img src="/Loading.gif" className="absolute top-16 z-20" /> */}
-        </div>
-
+                <linearGradient
+                  id="paint0_linear_116_153"
+                  x1="100"
+                  y1="0"
+                  x2="100"
+                  y2="200"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  {" "}
+                  <stop stopColor="#2BAE66" />{" "}
+                  <stop offset="1" stopColor="#007635" />{" "}
+                </linearGradient>{" "}
+                <clipPath id="clip0_116_153">
+                  {" "}
+                  <rect width="200" height="200" fill="white" />{" "}
+                </clipPath>{" "}
+              </defs>{" "}
+            </svg>
+            <img
+              src="/images/green-quran-hero.png"
+              className="w-full h-full object-contain z-10"
+              alt=""
+            />
+            {/* <img src="/Loading.gif" className="absolute top-16 z-20" /> */}
+          </div>
+        )}
         {/* For Mobile Only */}
-        <div className="md:hidden h-full opacity-50 select-none">
-          <img
-            className="absolute opacity-20 w-16 h-24 left-32 bottom-8 rounded object-cover rotate-12 select-none"
-            src="/images/yasser-doasri.png"
-            alt=""
-          />
-          <img
-            className="absolute opacity-20 w-16 h-24 left-32 top-8 rounded object-cover -rotate-12 select-none"
-            src="/images/sudais.png"
-            alt=""
-          />
-          <img
-            className="absolute opacity-20 w-16 h-24 right-16 bottom-8 rounded object-cover -rotate-12 select-none"
-            src="/images/sheikh-1.png"
-            alt=""
-          />
-          <img
-            className="absolute opacity-20 w-16 h-24 right-5 top-8 rounded object-cover rotate-12 select-none"
-            src="/images/saud-sherim.png"
-            alt=""
-          />
-          <img
-            className="absolute opacity-20 w-16 h-24 top-24 right-48 rounded object-cover rotate-12 select-none"
-            src="/images/maher-meiqly.png"
-            alt=""
-          />
-        </div>
+        {platform.mobile && (
+          <div className="md:hidden h-full opacity-50 select-none">
+            <img
+              className="absolute opacity-20 w-16 h-24 left-32 bottom-8 rounded object-cover rotate-12 select-none"
+              src="/images/yasser-doasri.png"
+              alt=""
+            />
+            <img
+              className="absolute opacity-20 w-16 h-24 left-32 top-8 rounded object-cover -rotate-12 select-none"
+              src="/images/sudais.png"
+              alt=""
+            />
+            <img
+              className="absolute opacity-20 w-16 h-24 right-16 bottom-8 rounded object-cover -rotate-12 select-none"
+              src="/images/sheikh-1.png"
+              alt=""
+            />
+            <img
+              className="absolute opacity-20 w-16 h-24 right-5 top-8 rounded object-cover rotate-12 select-none"
+              src="/images/saud-sherim.png"
+              alt=""
+            />
+            <img
+              className="absolute opacity-20 w-16 h-24 top-24 right-48 rounded object-cover rotate-12 select-none"
+              src="/images/maher-meiqly.png"
+              alt=""
+            />
+          </div>
+        )}
       </div>
     </section>
   );

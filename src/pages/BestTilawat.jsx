@@ -1,5 +1,8 @@
+import useDeviceType from "../hooks/useDeviceType";
+
 const BestTilawat = () => {
-  return <div>BestTilawat</div>;
+  let platform = useDeviceType();
+  return <>{platform.mobile ? "Mobile" : "Desktop"}</>;
 };
 
 export default BestTilawat;
