@@ -58,7 +58,7 @@ const Register = () => {
                 {...register("username")}
                 type={"text"}
                 id={"username"}
-                className="px-4 py-2 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
+                className="px-4 py-2 pr-8 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
               />
 
               <BiUser className="absolute top-3 right-2" />
@@ -78,7 +78,7 @@ const Register = () => {
                 dir="ltr"
                 type={"text"}
                 id={"email"}
-                className="px-4 py-2 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
+                className="px-4 py-2 pl-8 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
               />
 
               <MdOutlineEmail className="absolute top-3 right-2" />
@@ -98,7 +98,7 @@ const Register = () => {
                 dir="ltr"
                 type={"password"}
                 id={"password"}
-                className="px-4 py-2 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
+                className="px-4 py-2 pl-8 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
               />
 
               <MdPassword className="absolute top-3 right-2" />
@@ -119,7 +119,7 @@ const Register = () => {
                 dir="ltr"
                 type={"password"}
                 id={"confirmPassword"}
-                className="px-4 py-2 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
+                className="px-4 py-2 pl-8 rounded-lg bg-blacky outline outline-2 outline-light-blacky focus-within:outline-none w-full md:w-3/5 lg:w-2/5 transition-all duration-300 focus:bg-greeny-gradient"
               />
 
               <MdPassword className="absolute top-3 right-2" />
