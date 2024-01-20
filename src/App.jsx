@@ -17,12 +17,12 @@ function App() {
 
       <Routes>
         <Route index element={<Home />} />
-        <Route path="shiekhs" element={<Shiekhs />} />
-        <Route path="best-tilawat" element={<BestTilawat />} />
-        <Route path="blogs" element={<Blogs />} />
-        <Route path="about-us" element={<AboutUs />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/shiekhs" element={<Shiekhs />} />
+        <Route path="/best-tilawat" element={<BestTilawat />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
