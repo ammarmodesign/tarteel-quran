@@ -41,7 +41,7 @@ const Register = () => {
   return (
     <div className="my-32">
       <div className="wrapper mx-auto">
-        <h1 className="register text-3xl font-bold mb-8">أنشاء حساب جديد</h1>
+        <h1 className="register text-3xl font-bold mb-8">أنشئ حساب جديد</h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 items-center justify-center gap-4"
