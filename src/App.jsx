@@ -15,6 +15,8 @@ import Login from "./pages/Login";
 function App() {
   return (
     <>
+      <Analytics mode="production" />
+
       <Navbar />
       <Routes>
         <Route index element={<Home />} />
@@ -29,7 +31,6 @@ function App() {
       <Footer />
 
       <SpeedInsights />
-      <Analytics />
     </>
   );
 }

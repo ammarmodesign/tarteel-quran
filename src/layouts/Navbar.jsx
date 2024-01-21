@@ -5,10 +5,11 @@ const Navbar = () => {
   function closeNavMobile() {
     console.log("clicked");
     nav_mobile.current?.classList.add("translate-x-full");
+    document.body.style.overflowY = "visible";
   }
   function showNavMobile() {
     nav_mobile.current?.classList.remove("translate-x-full");
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
   }
 
   return (

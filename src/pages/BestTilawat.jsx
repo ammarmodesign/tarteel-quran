@@ -1,8 +1,7 @@
-import useDeviceType from "../hooks/useDeviceType";
+import { isMobile } from "react-device-detect";
 
 const BestTilawat = () => {
-  let platform = useDeviceType();
-  return <>{platform.mobile ? "Mobile" : "Desktop"}</>;
+  return <>{isMobile ? "Mobile" : "Desktop"}</>;
 };
 
 export default BestTilawat;

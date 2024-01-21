@@ -5,11 +5,9 @@ import FeatCard from "../components/ui/FeatCard";
 import Hero from "../components/Hero";
 import { IoMdBook, IoMdHeartEmpty } from "react-icons/io";
 import { PiMedal } from "react-icons/pi";
-import useDeviceType from "../hooks/useDeviceType";
+import { isDesktop } from "react-device-detect";
 
 const Home = () => {
-  let platform = useDeviceType();
-
   return (
     <>
       <Hero />
@@ -45,21 +43,18 @@ const Home = () => {
             </p>
             <button className="btn-primary">معرفة المزيد</button>
           </div>
-          {/* Mobile Only */}
-          {platform.mobile && (
-            <div className="images">
-              <img
-                src="/images/quran-about-1.png"
-                className="w-24 aspect-auto -z-20 absolute rotate-12 top-8 opacity-40 md:opacity-100 md:z-0 md:rotate-0 md:w-40 md:relative"
-                alt=""
-              />
-              <img
-                src="/images/quran-about-2.png"
-                className="w-24 aspect-auto -z-20 absolute -rotate-12 bottom-24 left-8 opacity-10 md:opacity-100 md:z-0 md:rotate-0 md:w-40 md:relative"
-                alt=""
-              />
-            </div>
-          )}
+          <div className="images">
+            <img
+              src="/images/quran-about-1.png"
+              className="w-24 aspect-auto -z-20 absolute rotate-12 top-8 opacity-40 md:opacity-100 md:z-0 md:rotate-0 md:w-40 md:relative"
+              alt=""
+            />
+            <img
+              src="/images/quran-about-2.png"
+              className="w-24 aspect-auto -z-20 absolute -rotate-12 bottom-24 left-16 opacity-10 md:opacity-100 md:z-0 md:rotate-0 md:w-40 md:relative"
+              alt=""
+            />
+          </div>
         </div>
       </section>
       <section className="banner bg-greeny-gradient section-margin text-white">
@@ -68,7 +63,7 @@ const Home = () => {
             <h3 className="font-bold text-2xl">
               إستمع إلي تلاوات قارئك المفضل
             </h3>
-            <p className="text-zinc-300">
+            <p className="text-zinc-300 max-w-72">
               إستمع لأكثر من 60 قارئ بجودة عالية وبدون تقطيع.
             </p>
             <button className="w-fit btn-blacky">
@@ -76,8 +71,10 @@ const Home = () => {
               <p>أرني المزيد من القراء</p>
             </button>
           </div>
-          {platform.mobile && <ImageSwiper />}
-          {!platform.mobile && (
+          {/* Mobile and above */}
+          {!isDesktop && <ImageSwiper />}
+          {/* Desktop only */}
+          {isDesktop && (
             <div className="images hidden lg:block h-[400px]">
               <img
                 className="z-40 rounded-lg absolute w-52 left-0 transition-all duration-300 hover:left-16"

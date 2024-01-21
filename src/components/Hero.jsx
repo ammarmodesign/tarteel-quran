@@ -1,7 +1,6 @@
-import useDeviceType from "../hooks/useDeviceType";
+import { isDesktop } from "react-device-detect";
 
 const Hero = () => {
-  let platform = useDeviceType();
   return (
     <section className="bg-[#212121]">
       <div className="relative wrapper py-16 flex items-center justify-between">
@@ -14,7 +13,7 @@ const Hero = () => {
             تمتع بأفضل التلاوات المختارة وأحتفظ بها لوقت لاحق.
           </p>
           <svg
-            className="animate-round absolute hidden md:block md:top-28 lg:top-12 z-10"
+            className="animate-round absolute top-12 right-16 md:top-28 md:right-0 lg:top-12 lg:right-0 z-10"
             width="120"
             height="130"
             viewBox="0 0 204 130"
@@ -32,7 +31,7 @@ const Hero = () => {
           </svg>
           <svg
             id="mark-icon"
-            className="animate-wiggle absolute hidden md:block md:top-32 md:right-20 lg:top-16 lg:right-20 z-10"
+            className="animate-wiggle absolute top-12 right-32 md:top-32 md:right-20 lg:top-16 lg:right-20 z-10"
             width="60"
             height="60"
             viewBox="0 0 51 51"
@@ -83,7 +82,8 @@ const Hero = () => {
             </defs>
           </svg>
         </div>
-        {!platform.mobile && (
+        {/* Desktop only */}
+        {isDesktop && (
           <div className="hidden relative md:block max-w-[400px]">
             <svg
               className="absolute top-4 right-16"
@@ -162,11 +162,10 @@ const Hero = () => {
               className="w-full h-full object-contain z-10"
               alt=""
             />
-            {/* <img src="/Loading.gif" className="absolute top-16 z-20" /> */}
           </div>
         )}
-        {/* For Mobile Only */}
-        {platform.mobile && (
+        {/* Mobile and above */}
+        {!isDesktop && (
           <div className="md:hidden h-full opacity-50 select-none">
             <img
               className="absolute opacity-20 w-16 h-24 left-32 bottom-8 rounded object-cover rotate-12 select-none"
